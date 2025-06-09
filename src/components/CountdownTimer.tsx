@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { CalendarDays, Clock, AlarmClock } from "lucide-react";
+import { AlarmClock } from "lucide-react";
 
 interface CountdownTimerProps {
   endTime: Date;

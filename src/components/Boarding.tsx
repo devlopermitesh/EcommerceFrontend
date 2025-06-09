@@ -1,4 +1,4 @@
-import { Boardings, type BoardingTypes } from "@/data/dummy";
+import { Boardings } from "@/data/dummy";
 import { useEffect, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Media from "./Media";
@@ -8,7 +8,6 @@ import { ChevronRight } from "lucide-react";
 
 const Boarding = ({ className }: { className: string }) => {
   const [emblaApi, setEmblaApi] = useState<any>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = Boardings.length;
 
   // Set up auto-scroll to the next slide every 60 seconds
@@ -16,24 +15,13 @@ const Boarding = ({ className }: { className: string }) => {
     if (!emblaApi) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const nextIndex = (prev + 1) % totalSlides;
-        emblaApi.scrollTo(nextIndex);
-        return nextIndex;
-      });
+      const currentIndex = emblaApi.selectedScrollSnap();
+      const nextIndex = (currentIndex + 1) % totalSlides;
+      emblaApi.scrollTo(nextIndex);
     }, 60000); // 60 seconds
 
     return () => clearInterval(interval);
   }, [emblaApi, totalSlides]);
-
-  // Update currentIndex when user manually changes slide
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    emblaApi.on("select", () => {
-      setCurrentIndex(emblaApi.selectedScrollSnap());
-    });
-  }, [emblaApi]);
 
   return (
     <div className={cn("flex flex-col items-center", className)}>

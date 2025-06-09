@@ -1,4 +1,3 @@
-import type { Category } from "./type";
 
 export const collections = [
   {
