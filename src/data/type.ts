@@ -44,3 +44,20 @@ export interface Review {
 export interface Category{
  slug: string, name: string,  image:string
 }
+export type Cancellation = {
+  orderId: string
+  product: string
+  productImage: string
+  reason: string
+  requestedBy: "User" | "Admin"
+  date: string // ISO string
+  status: "Pending" | "Approved" | "Rejected"
+}
+export type WishlistItem = {
+  id: string;
+  product: string;
+  productImage: string;
+  price: number;
+  availability: "In Stock" | "Out of Stock";
+  addedOn: string; // ISO date string
+};

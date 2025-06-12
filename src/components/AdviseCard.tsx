@@ -16,7 +16,7 @@ interface AdviceCard {
 
 const AdviceCard: React.FC<AdviceCard> = ({ EditMeta, needEdit, product, className }) => {
   return (
-    <div className={`flex flex-col w-full h-auto relative  ${className ?? ""}`}>
+    <div className={`flex flex-col w-full h-auto relative rounded  ${className ?? ""}`}>
       {/* Responsive Image */}
       <img
         src={product.images?.[0] ?? ""}

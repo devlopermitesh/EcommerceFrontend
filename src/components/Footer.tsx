@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
     const routers=useRoutes();
   return (
-    <footer className="bg-black text-white w-full mt-auto">
+    <footer className="bg-black text-white w-full mt-auto ">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Subscribe Section */}
         <div>
@@ -45,7 +45,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-gray-400">
             {
                 routers.map((route)=>
-                <Link to={route.href}>{route.label}</Link>)
+                <Link key={route.label} to={route.href}>{route.label}</Link>)
             }
       
           </ul>

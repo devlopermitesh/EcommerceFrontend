@@ -1,3 +1,5 @@
+import type { ReturnEntry } from "@/components/return-column";
+import type { Cancellation, WishlistItem } from "./type";
 
 export const collections = [
   {
@@ -2255,3 +2257,125 @@ export const categories = [
     image: "https://cdn-icons-png.flaticon.com/512/1002/1002760.png"
   }
 ]
+
+export const returnData: ReturnEntry[] = [
+  {
+    returnId: "RET-1001",
+    orderId: "ORD-3021",
+    customerName: "Mitesh Patel",
+    products: "Blue T-shirt, Jeans",
+    quantity: 2,
+    reason: "Size Issue",
+    returnType: "Refund",
+    status: "Pending",
+    requestDate: "2025-06-05",
+    refundAmount: 800
+  },
+  {
+    returnId: "RET-1002",
+    orderId: "ORD-3022",
+    customerName: "Rahul Kumar",
+    products: "Smartwatch",
+    quantity: 1,
+    reason: "Damaged",
+    returnType: "Replacement",
+    status: "Approved",
+    requestDate: "2025-06-03",
+    resolvedDate: "2025-06-08",
+    refundAmount: 0
+  }
+]
+
+
+export const dummyCancellationData: Cancellation[] = [
+  {
+    orderId: "ORD123456",
+    product: "Wireless Bluetooth Headphones",
+    productImage: "https://dummyimage.com/100x100/000/fff&text=Headphones",
+    reason: "Received wrong color",
+    requestedBy: "User",
+    date: "2025-06-09T10:30:00Z",
+    status: "Pending",
+  },
+  {
+    orderId: "ORD123457",
+    product: "Casual Cotton Shirt",
+    productImage: "https://dummyimage.com/100x100/007bff/ffffff&text=Shirt",
+    reason: "Size was incorrect",
+    requestedBy: "User",
+    date: "2025-06-08T12:45:00Z",
+    status: "Approved",
+  },
+  {
+    orderId: "ORD123458",
+    product: "Leather Wallet",
+    productImage: "https://dummyimage.com/100x100/964B00/fff&text=Wallet",
+    reason: "Item was defective",
+    requestedBy: "Admin",
+    date: "2025-06-07T09:15:00Z",
+    status: "Rejected",
+  },
+  {
+    orderId: "ORD123459",
+    product: "Running Shoes",
+    productImage: "https://dummyimage.com/100x100/ff4444/fff&text=Shoes",
+    reason: "Changed mind",
+    requestedBy: "User",
+    date: "2025-06-06T14:00:00Z",
+    status: "Pending",
+  },
+  {
+    orderId: "ORD123460",
+    product: "Smartphone Stand",
+    productImage: "https://dummyimage.com/100x100/333/eee&text=Stand",
+    reason: "Ordered by mistake",
+    requestedBy: "User",
+    date: "2025-06-05T16:10:00Z",
+    status: "Approved",
+  },
+]
+
+
+
+export const wishlistData: WishlistItem[] = [
+  {
+    id: "1",
+    product: "Apple AirPods Pro",
+    productImage: "https://cdn-icons-png.flaticon.com/512/9131/9131470.png",
+    price: 249.99,
+    availability: "In Stock",
+    addedOn: "2025-06-01T10:30:00Z",
+  },
+  {
+    id: "2",
+    product: "Sony WH-1000XM5",
+    productImage: "https://cdn-icons-png.flaticon.com/512/10550/10550907.png",
+    price: 399.99,
+    availability: "Out of Stock",
+    addedOn: "2025-06-03T14:45:00Z",
+  },
+  {
+    id: "3",
+    product: "Logitech MX Master 3S",
+    productImage: "https://cdn-icons-png.flaticon.com/512/10703/10703876.png",
+    price: 99.99,
+    availability: "In Stock",
+    addedOn: "2025-06-05T09:15:00Z",
+  },
+  {
+    id: "4",
+    product: "Samsung 27\" Curved Monitor",
+    productImage: "https://cdn-icons-png.flaticon.com/512/609/609803.png",
+    price: 199.99,
+    availability: "In Stock",
+    addedOn: "2025-06-07T17:20:00Z",
+  },
+  {
+    id: "5",
+    product: "ASUS ROG Strix Gaming Laptop",
+    productImage: "https://cdn-icons-png.flaticon.com/512/7498/7498821.png",
+    price: 1499.99,
+    availability: "Out of Stock",
+    addedOn: "2025-06-09T12:00:00Z",
+  },
+];

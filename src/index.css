@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@font-face {
+  font-family: Helvetical;
+  src: url("./assets/font/Helvetical.otf");
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -74,6 +77,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-inter: 'Inter', sans-serif;
+  --font-Helvetical:Helvetical,"sans-serif"
+
 }
 
 .dark {
@@ -112,10 +118,12 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 ;
   }
   body {
     @apply bg-background text-foreground;
+
+  font-family: var(--font-inter);
   }
 }
 .no-scrollbar::-webkit-scrollbar {
